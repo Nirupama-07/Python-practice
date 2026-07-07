@@ -5,3 +5,11 @@ Python coding problems and solutions for interview preparation, covering fundame
 
 - Conditional Statements
 - Loops
+- Functions
+
+
+## Purpose
+
+- Improve Python programming skills
+- Prepare for technical interviews
+- Practice problem solving
