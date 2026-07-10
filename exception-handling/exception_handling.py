@@ -66,11 +66,48 @@ finally:
     print("Thankyou for visiting")'''
 
 #Write a program to raise an exception if age is less than 18.
-age = int(input("Enter your age: "))
+'''age = int(input("Enter your age: "))
 
 if age < 18:
     raise Exception("Age must be 18 or above.")
 else:
-    print("You are eligible.")
+    print("You are eligible.")'''
+
+#Write a program using assert to check if a number is positive.
+'''num=int(input("Enter a number:"))
+
+assert num>0,"Number must be positive"
+print("Done")'''
+
+#Write a program to create a custom exception for invalid marks.
+'''class InvalidMarks(Exception):
+    pass
+
+try:
+    marks=int(input("Enter marks:"))
+
+    if marks<0:
+        raise InvalidMarks("Marks cannot be negative")
+    else:
+        print("Done")
+except InvalidMarks as e:
+    print(e)'''
+
+#Write a program to create a custom exception for insufficient balance.
+class InsufficeintBalance(Exception):
+    pass
+
+try:
+    balance=int(input("Enter balance:"))
+    amount=int(input("Enter the amount:"))
+
+    if balance<amount:
+        raise InsufficeintBalance("Insufficient Balance")
+    else:
+        print("Sucessfully done")
+except InsufficeintBalance as e:
+    print(e)
+
+
 
     
