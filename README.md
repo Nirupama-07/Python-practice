@@ -6,7 +6,7 @@ Python coding problems and solutions for interview preparation, covering fundame
 - Conditional Statements
 - Loops
 - Functions
-
+- Exception Handling
 
 ## Purpose
 
