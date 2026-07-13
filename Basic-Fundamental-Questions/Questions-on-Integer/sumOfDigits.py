@@ -1,9 +1,9 @@
-digit=int(input("Enter a number"))
-
+num=int(input("Enter a number"))
 
 sum=0
 
-while digit>0:
-    sum=sum+(digit%10)
-    digit//=10
+while num>0:
+    digit=num%10
+    sum=sum+digit
+    num=num//10
 print(sum)
