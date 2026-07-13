@@ -12,3 +12,6 @@ while digit>0:
     count+=1
     digit//=10
 print(count)
+
+
+#// is floor division used to remove the last digit

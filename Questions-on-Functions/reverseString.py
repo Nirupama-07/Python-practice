@@ -10,7 +10,7 @@ text=input("Enter a text:")
 print(reverse(text))'''
 
 #Method 2
-text=input("Enter a text")
+text=input("Enter a text:")
 def reverse(text):
     return text[::-1]
 

@@ -94,7 +94,7 @@ except InvalidMarks as e:
     print(e)'''
 
 #Write a program to create a custom exception for insufficient balance.
-class InsufficeintBalance(Exception):
+'''class InsufficeintBalance(Exception):
     pass
 
 try:
@@ -106,7 +106,8 @@ try:
     else:
         print("Sucessfully done")
 except InsufficeintBalance as e:
-    print(e)
+    print(e)'''
+
 
 
 

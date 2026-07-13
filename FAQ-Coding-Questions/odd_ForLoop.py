@@ -1,4 +1,4 @@
-num=int(input("Enter upto which number you want the result"))
+num=int(input("Enter upto which number you want the result:"))
 
 print("Odd numbers are:")
 

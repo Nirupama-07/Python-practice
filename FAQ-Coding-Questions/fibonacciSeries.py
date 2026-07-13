@@ -1,4 +1,4 @@
-num=int(input("Enter a number"))
+num=int(input("Enter a number:"))
 
 a=0
 b=1
