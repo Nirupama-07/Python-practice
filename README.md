@@ -7,6 +7,7 @@ Python coding problems and solutions for interview preparation, covering fundame
 - Loops
 - Functions
 - Exception Handling
+- File Handling
 
 
 ## Tricks to remember logics
