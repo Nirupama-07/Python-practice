@@ -8,6 +8,7 @@ Python coding problems and solutions for interview preparation, covering fundame
 - Functions
 - Exception Handling
 - File Handling
+- OOPS-Basics
 
 
 ## Tricks to remember logics
