@@ -10,6 +10,8 @@ Python coding problems and solutions for interview preparation, covering fundame
 - File Handling
 - OOPS-Basics(Classes,Objects,Constructors)
 - OOPS-Advanced(Encapsulation,Abstraction)
+- Django
+-- First Chapter(company_site)
 
 
 ## Tricks to remember logics
