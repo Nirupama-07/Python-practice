@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-10 py-16 flex flex-col md:flex-row items-center gap-12">
+
+        <!-- Left -->
+        <div class="flex-1">
+            <h2 class="text-5xl font-bold text-gray-800 mb-6">
+                Welcome to Our Company
+            </h2>
+
+            <p class="text-lg text-gray-600 leading-8 mb-8">
+                We build modern websites, powerful mobile applications, and
+                beautiful user interfaces that help businesses grow in the
+                digital world.
+            </p>
+
+            <div class="flex gap-5">
+                <a href="{% url 'about' %}"
+                   class="bg-blue-800 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition duration-300 shadow-lg">
+                    Learn More
+                </a>
+
+                <a href="{% url 'contact' %}"
+                   class="border-2 border-blue-800 text-blue-800 px-8 py-3 rounded-xl hover:bg-blue-800 hover:text-white transition duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Right -->
+        <div class="flex-1">
+            <img src="https://wallpaperaccess.com/full/656670.jpg"
+                 class="rounded-2xl shadow-xl w-full h-105 object-cover"
+                 alt="Company">
+        </div>
+
+    </section>
+
+    <!-- Services -->
+    <section class="max-w-7xl mx-auto px-10 py-10">
+
+        <h2 class="text-4xl font-bold text-center mb-12">
+            Our Services
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300">
+                <div class="text-5xl mb-5">💻</div>
+
+                <h3 class="text-2xl font-bold mb-4">
+                    Web Development
+                </h3>
+
+                <p class="text-gray-600">
+                    Responsive and scalable websites built with modern
+                    technologies.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300">
+                <div class="text-5xl mb-5">📱</div>
+
+                <h3 class="text-2xl font-bold mb-4">
+                    Mobile Apps
+                </h3>
+
+                <p class="text-gray-600">
+                    Android and iOS applications designed for excellent user
+                    experience.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300">
+                <div class="text-5xl mb-5">🎨</div>
+
+                <h3 class="text-2xl font-bold mb-4">
+                    UI / UX Design
+                </h3>
+
+                <p class="text-gray-600">
+                    Beautiful and user-friendly interfaces that customers love.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-blue-900 text-white mt-20 py-16">
+
+        <div class="max-w-7xl mx-auto px-10">
+
+            <h2 class="text-4xl font-bold text-center mb-12">
+                Why Choose Us?
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+
+                <div>
+                    <h3 class="text-5xl font-bold">100+</h3>
+                    <p class="mt-4 text-lg">Projects Completed</p>
+                </div>
+
+                <div>
+                    <h3 class="text-5xl font-bold">50+</h3>
+                    <p class="mt-4 text-lg">Happy Clients</p>
+                </div>
+
+                <div>
+                    <h3 class="text-5xl font-bold">5+</h3>
+                    <p class="mt-4 text-lg">Years Experience</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}

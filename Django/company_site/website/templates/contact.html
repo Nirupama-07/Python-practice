@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block content %}
+
+<!-- Contact Heading -->
+<section class="py-12 bg-blue-50">
+    <h1 class="text-4xl font-bold text-center text-blue-900">
+        Contact Us
+    </h1>
+
+    <p class="text-center text-gray-600 mt-4">
+        We'd love to hear from you. Fill out the form below and we'll get back to you.
+    </p>
+</section>
+
+<!-- Contact Form -->
+<section class="max-w-6xl mx-auto px-10 py-16">
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- Left Side -->
+        <div>
+
+            <h2 class="text-3xl font-bold text-blue-900 mb-6">
+                Get In Touch
+            </h2>
+
+            <p class="text-gray-600 leading-8 mb-8">
+                Whether you have a project idea, a business inquiry, or simply
+                want to say hello, feel free to contact us.
+            </p>
+
+            <div class="space-y-5">
+
+                <div>
+                    <h3 class="font-bold text-xl">📍 Address</h3>
+                    <p class="text-gray-600">
+                        Bhubaneswar, Odisha, India
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-xl">📞 Phone</h3>
+                    <p class="text-gray-600">
+                        +91 9876543210
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-xl">✉️ Email</h3>
+                    <p class="text-gray-600">
+                        info@mycompany.com
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="bg-white shadow-xl rounded-2xl p-8 ">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="mb-5">
+                    <label class="block font-semibold mb-2">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        class="w-full mt-3 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 ">
+                </div>
+
+                <div class="mb-5">
+                    <label class="block font-semibold mb-2">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        class="w-full mt-3 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+
+                <div class="mb-5">
+                    <label class="block font-semibold mb-2">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        name="subject"
+                        placeholder="Enter subject"
+                        class="w-full mt-3 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+
+                <div class="mb-5">
+                    <label class="block font-semibold mb-2">
+                        Message
+                    </label>
+
+                    <textarea
+                        name="message"
+                        rows="5"
+                        placeholder="Write your message..."
+                        class="w-full mt-3 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full bg-blue-900 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Google Map Placeholder -->
+<section class="max-w-6xl mx-auto px-10 pb-16">
+
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-8">
+        Our Office
+    </h2>
+
+    <div class="rounded-2xl overflow-hidden shadow-lg">
+
+        <img
+            src="https://www.synergyce.com/images/banner-home2.jpg"
+            class="w-full h-87.5 object-cover"
+            alt="Location">
+
+    </div>
+
+</section>
+
+{% endblock %}
