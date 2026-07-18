@@ -9,7 +9,7 @@ Python coding problems and solutions for interview preparation, covering fundame
 - Exception Handling
 - File Handling
 - OOPS-Basics(Classes,Objects,Constructors)
-- OOPS-Advanced(Encapsulation)
+- OOPS-Advanced(Encapsulation,Abstraction)
 
 
 ## Tricks to remember logics
