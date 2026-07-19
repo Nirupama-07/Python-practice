@@ -8,23 +8,74 @@ Blog
 
 <section class="about bg-blue-950">
     <div class=" text-white shadow-lg pt-20 pl-20">
-        <p class="text-xs text-blue-100 font-semibold">About our agency</p>
+        <p class="text-xs text-blue-100 font-semibold">🔊About our agency</p>
         <div class="flex gap-x-60 text-white mt-5 mr-7">
-            
-            <h1 class="text-4xl">Influencer Marketing Solutions for business</h1>
-            <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, magni quaerat quibusdam vol Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dicta dignissimos sequi laborum nobis aliquid repudiandae velit cupiditate ab aut?uptatem ipsa tenetur?</p>
+
+            <h1 class="text-4xl font-bold">Influencer Marketing Solutions for business</h1>
+            <p class="text-sm font-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, magni
+                quaerat quibusdam
+                vol Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dicta dignissimos sequi laborum
+                nobis aliquid repudiandae velit cupiditate ab aut?uptatem ipsa tenetur?</p>
         </div>
-        <div class="flex gap-20 mt-10 pb-10"> 
-            <img src="https://static.vecteezy.com/system/resources/previews/032/168/361/non_2x/corporate-office-discussion-teamwork-administration-team-brainstorming-meeting-businessmen-group-laptop-indoors-top-cooperation-business-view-photo.jpg" class="w-[500px] h-[350px] rounded-2xl" alt="">
-            <div class="flex gap-4">
-                <div class="w-62.5 h-55 bg-blue-400/50 rounded-3xl">
-                    <h1 class="text-2xl text-white font-bold px-3 py-5">Your Growth our priority</h1>
-                    <p class="text-white font-light  px-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi incidunt vitae, mollitia similique voluptatum ad.</p>
+        <div class="flex gap-16 mt-10 pb-10">
+            <img src="https://static.vecteezy.com/system/resources/previews/032/168/361/non_2x/corporate-office-discussion-teamwork-administration-team-brainstorming-meeting-businessmen-group-laptop-indoors-top-cooperation-business-view-photo.jpg"
+                class="w-125 h-112.5 rounded-2xl" alt="">
+            <div class="flex flex-col">
+                <div class="flex gap-40">
+                    <div class="w-80 h-55 bg-blue-700/50 rounded-3xl">
+                        <h1 class="text-3xl text-white font-bold px-3 py-5">Your Growth our priority</h1>
+                        <p class="text-white font-semibold  px-3">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Eligendi incidunt vitae, mollitia similique voluptatum ad.</p>
+                    </div>
+                    <div class="flex flex-col gap-48">
+                        <div class="w-62.5 h-55 bg-blue-600/50 rounded-3xl">
+                            <div class="flex flex-col pl-16 pt-7">
+                                <h1 class="pl-8 font-bold text-3xl">450+</h1>
+                                <p class="font-semibold text-xl">Live Websites</p>
+                            </div>
+                            <div class="flex flex-col pl-16 pt-7">
+                                <h1 class="pl-8 font-bold text-3xl">750+</h1>
+                                <p class="font-semibold text-xl">Deals with clients</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="bg-blue-600/50 mt-7 w-[85%] h-[25vh] rounded-3xl">
+                    <h1 class="mt-2 pl-7 font-bold text-3xl">Innovating For Your Success</h1>
+                    <p class="mt-5 pl-7">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, nihil! Eum quis,
+                        obcaecati id
+                        voluptate sunt deserunt error labore provident sequi, repudiandae dolores amet laudantium.</p>
                 </div>
             </div>
         </div>
     </div>
-    
+
+</section>
+
+<!-- Services -->
+<section class="bg-blue-900 pl-20 pt-10">
+    <h1 class="text-white text-sm font-medium">🔊Services</h1>
+    <div class="flex gap-52 ">
+        <h1 class="text-3xl mt-4 w-[60%] text-white font-bold">Our Exclusive Services</h1>
+        <p class="text-sm mt-4 pr-8 text-white font-bold">Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Blanditiis in saepe repudiandae minus, alias magnam.amet consectetur adipisicing elit.
+            Repudiandae quidem voluptatibus nostrum eum autem aut!</p>
+    </div>
+    <div class="flex gap-20 pb-20 mt-12">
+        {% for card in cards %}
+        <div class="flex flex-col rounded-3xl bg-white w-[250px] cursor-pointer transition-transform hover:-translate-y-2">
+            <img src="{{ card.img }}" class="w-62.5 h-[150px] rounded-2xl" alt="">
+            <div class="bg-blue-600 h-[200px] rounded-b-2xl h-[50px]">
+                <h2 class="text-xl font-bold text-white mt-4 pl-3">{{ card.title }}</h2>
+                <p class="text-sm font-light text-white mt-2 pl-3 pr-2">{{ card.description | truncatechars:90 }}
+                </p>
+                <p class="text-sm font-bold text-white mt-4 pl-3">Published Date:{{ card.date|date:"d.M.Y" }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
 </section>
 
 {% endblock %}
