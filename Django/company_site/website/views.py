@@ -2,7 +2,56 @@ from django.shortcuts import render
 
 # Create your views here.
 def home(request):
-    return render(request,"home.html",{"name":"Crushaders"})
+    cards=[
+        {
+            "logo":"💻",
+            "title":"Web Development",
+            "description":"Responsive and scalable websites built with modern technologies."
+        },
+        {
+            "logo":"📱",
+            "title":"Mobile Apps",
+            "description":"Android and iOS applications designed for excellent user experience."
+        },
+        {
+            "logo":"🎨",
+            "title":"UI / UX Design",
+            "description":"Beautiful and user-friendly interfaces that customers love."
+        },
+        
+        {
+            "logo":"📝",
+            "title":"Functional Testing",
+            "description":"All projects are tested throughly befor deploying."
+        },
+        
+        {
+            "logo":"🤖",
+            "title":"Python with AI",
+            "description":"Walk with todays trend by learning python with AI."
+        },
+        
+        {
+            "logo":"☎",
+            "title":"Customer Support",
+            "description":"Customer Care are always available 24x7."
+        }
+    ]
+    stats=[
+        {
+            "stat":"100+",
+            "services":"Projects Completed"
+        },
+        {
+            "stat":"60+",
+            "services":"Happy Clients"
+        },
+        {
+            "stat":"5+",
+            "services":"Years of Experience"
+        }
+    ]
+    return render(request,"home.html",{"name":"Crushaders", "cards":cards, "stats":stats})
 
 def about(request):
     return render(request,"about.html",{"name":"Crushaders"})

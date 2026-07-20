@@ -51,44 +51,21 @@ Home
         </h2>
 
         <div class="grid md:grid-cols-3 gap-8">
-
+            {% for card in cards %}
             <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300">
-                <div class="text-5xl mb-5">💻</div>
+                <div class="text-5xl mb-5">{{ card.logo }}</div>
 
                 <h3 class="text-2xl font-bold mb-4">
-                    Web Development
+                   {{ card.title }}
                 </h3>
 
                 <p class="text-gray-600">
-                    Responsive and scalable websites built with modern
-                    technologies.
+                    {{ card.description }}
                 </p>
             </div>
+            {% endfor %}
 
-            <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300">
-                <div class="text-5xl mb-5">📱</div>
-
-                <h3 class="text-2xl font-bold mb-4">
-                    Mobile Apps
-                </h3>
-
-                <p class="text-gray-600">
-                    Android and iOS applications designed for excellent user
-                    experience.
-                </p>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300">
-                <div class="text-5xl mb-5">🎨</div>
-
-                <h3 class="text-2xl font-bold mb-4">
-                    UI / UX Design
-                </h3>
-
-                <p class="text-gray-600">
-                    Beautiful and user-friendly interfaces that customers love.
-                </p>
-            </div>
+            
 
         </div>
 
@@ -104,21 +81,13 @@ Home
             </h2>
 
             <div class="grid md:grid-cols-3 gap-8 text-center">
-
-                <div>
-                    <h3 class="text-5xl font-bold">100+</h3>
-                    <p class="mt-4 text-lg">Projects Completed</p>
-                </div>
-
-                <div>
-                    <h3 class="text-5xl font-bold">50+</h3>
-                    <p class="mt-4 text-lg">Happy Clients</p>
-                </div>
-
-                <div>
-                    <h3 class="text-5xl font-bold">5+</h3>
-                    <p class="mt-4 text-lg">Years Experience</p>
-                </div>
+                {% for stat in stats %}
+                    <div>
+                        <h3 class="text-5xl font-bold">{{ stat.stat }}</h3>
+                        <p class="mt-4 text-lg">{{ stat.services }}</p>
+                    </div>
+                {% endfor %}
+                
 
             </div>
 
