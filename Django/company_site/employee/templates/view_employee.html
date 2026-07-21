@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}
+Employee
+{% endblock %}
+
+{% block content %}
+
+<div class="max-w-3xl mx-auto mt-10 bg-white shadow-lg rounded-xl overflow-hidden">
+
+    <!-- Header -->
+    <div class="bg-blue-600 text-white px-8 py-6">
+        <h1 class="text-3xl font-bold">
+            Employee Details
+        </h1>
+    </div>
+
+    <!-- Employee Information -->
+    <div class="p-8">
+
+        <div class="grid grid-cols-2 gap-6">
+
+            <div>
+                <h3 class="text-gray-500 text-sm font-semibold">
+                    Name
+                </h3>
+
+                <p class="text-xl font-medium text-gray-800 mt-1">
+                    {{ employee.name }}
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-gray-500 text-sm font-semibold">
+                    Department
+                </h3>
+
+                <p class="text-xl font-medium text-gray-800 mt-1">
+                    {{ employee.department }}
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-gray-500 text-sm font-semibold">
+                    Salary
+                </h3>
+
+                <p class="text-xl font-medium text-gray-800 mt-1">
+                    ₹{{ employee.salary }}
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-gray-500 text-sm font-semibold">
+                    Status
+                </h3>
+
+                {% if employee.status %}
+                    <span class="inline-block mt-2 bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">
+                        Active
+                    </span>
+                {% else %}
+                    <span class="inline-block mt-2 bg-red-100 text-red-700 px-3 py-1 rounded-full font-semibold">
+                        Inactive
+                    </span>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-10 flex gap-4">
+
+            <a href="{% url 'employee:employee' %}"
+                class="bg-gray-500 hover:bg-gray-600 text-white px-5 py-2 rounded-lg transition">
+                ← Back
+            </a>
+
+            <a href="{% url 'employee:edit_employee' employee.id %}"
+                class="bg-yellow-500 hover:bg-yellow-600 text-white px-5 py-2 rounded-lg transition">
+                Edit
+            </a>
+
+            <a href="{% url 'employee:delete_employee' employee.id %}"
+                class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg transition">
+                Delete
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

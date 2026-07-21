@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+Employee
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="text-center mt-5 pt-4">
+        <h1 class="text-3xl font-bold text-blue-900">Employee Management</h1>
+    </div>
+    <div class="pl-10 mt-14">
+        <a href="{% url 'employee:add_employee' %}">
+            <button class="bg-blue-700 text-white px-4 py-4 rounded-2xl cursor-pointer active:scale-95">Add
+            Employee</button>
+        </a>
+        
+    </div>
+    <div class="overflow-x-auto mt-10">
+        <table class="w-full text-left">
+            <thead class="bg-gray-100 text-gray-700 uppercase text-sm">
+                <tr>
+                    <th class="px-6 py-4">Name</th>
+                    <th class="px-6 py-4">Department</th>
+                    <th class="px-6 py-4">Salary</th>
+                    <th class="px-6 py-4">Status</th>
+                    <th class="px-6 py-4 text-center">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody class="divide-y divide-gray-200">
+                {% for employee in employees %}
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4 font-medium text-gray-800">
+                        {{ employee.name }}
+                    </td>
+
+                    <td class="px-6 py-4">
+                        {{ employee.department }}
+                    </td>
+
+                    <td class="px-6 py-4">
+                        ₹{{ employee.salary }}
+                    </td>
+
+                    <td class="px-6 py-4">
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
+                            {% if employee.status %}
+                                Active
+                            {% else %}
+                                Inactive
+                            {% endif %}
+                        </span>
+                    </td>
+                    
+
+                    <td class="px-6 py-4">
+                        <div class="flex justify-center gap-2">
+
+                            <a href="{% url 'employee:view_employee' employee.id %}"
+                                class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm transition">
+                                View
+                            </a>
+
+                            <a href="{% url 'employee:edit_employee' employee.id %}"
+                                class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md text-sm transition">
+                                Edit
+                            </a>
+
+                            <a href="{% url 'employee:delete_employee' employee.id %}"
+                                class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm transition">
+                                Delete
+                            </a>
+
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pl-10 mt-10 flex gap-36">
+        <h1 class="text-2xl font-medium">Total Employee:{{ count }}</h1>
+        <h1 class="text-2xl font-medium text-green-600">Total Active Employee:{{ active }}</h1>
+        <h1 class="text-2xl font-medium text-red-600">Total Inactive Employee:{{ inactive }}</h1>
+    </div>
+
+</section>
+
+
+
+{% endblock %}
