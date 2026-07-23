@@ -10,8 +10,11 @@ Python coding problems and solutions for interview preparation, covering fundame
 - File Handling
 - OOPS-Basics(Classes,Objects,Constructors)
 - OOPS-Advanced(Encapsulation,Abstraction)
-- Django
--- First Chapter(company_site)
+- Django (company_site)
+-- Install Django, Tailwind, setup the django and done django fundamentals along with MVT
+-- Done Templates and static files
+-- Completed models and all ORM
+-- Completed forms.Form and forms.ModelForm
 
 
 ## Tricks to remember logics
