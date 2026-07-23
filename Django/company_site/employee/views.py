@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from .models import Employee
+from .forms import EmployeeForm
 
 # Create your views here.
 def employee_list(request):
-    employees=Employee.objects.order_by("salary")
+    employees=Employee.objects.order_by("name","status")
     active=Employee.objects.filter(status=True)
     inactive=Employee.objects.filter(status=False)
     
@@ -19,21 +20,20 @@ def employee_list(request):
     return render(request,"employee.html",context)
 
 def add_employee(request):
-    if request.method=="POST":
-        name=request.POST.get("name")
-        department=request.POST.get("department")
-        salary=request.POST.get("salary")
-        status = "status" in request.POST
+    if(request.method=="POST"):
+        form=EmployeeForm(request.POST)
+
+        if form.is_valid():
+            employee = form.save(commit=False)
+
+            employee.status = False
+
+            employee.save()
+            return redirect("employee:employee")
+    else:
+        form=EmployeeForm()
     
-        Employee.objects.create(
-            name=name,
-            department=department,
-            salary=salary,
-            status=status
-        )
-        return redirect("employee:employee")
-    
-    return render(request, "add_Employee.html")
+    return render(request, "add_Employee.html",{"form":form})
 
 def view_employee(request,id):
     employee=Employee.objects.get(id=id)
@@ -47,17 +47,19 @@ def delete_employee(request,id):
     return redirect("employee:employee")
 
 def edit_employee(request,id):
-    employee=Employee.objects.get(id=id)
+    employee = get_object_or_404(Employee, id=id)
 
     if request.method=="POST":
-        employee.name=request.POST.get("name")
-        employee.department=request.POST.get("department")
-        employee.salary=request.POST.get("salary")
-        employee.status="status" in request.POST
+        form = EmployeeForm(request.POST, instance=employee)
+
+        if form.is_valid():
+            
+            form.save()
+            return redirect("employee:employee")
 
        
-        employee.save()
-        return redirect("employee:employee")
+    else:
+        form = EmployeeForm(instance=employee)
 
 
-    return render(request,"edit_employee.html",{"employee":employee})
+    return render(request,"edit_employee.html",{"employee":employee,"form":form})

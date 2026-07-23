@@ -13,45 +13,25 @@ Employee
 <form method="POST" class="space-y-6">
     {% csrf_token %}
 
-    <!-- Name -->
-    <div>
-        <label class="block text-gray-700 font-medium mb-2">
-            Name
-        </label>
+    <label class="pl-7 font-bold">{{ form.name.label }}</label>
+   {{ form.name }}
 
-        <input type="text" name="name" placeholder="Enter employee name"
-            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
-    </div>
+   <label class="pl-7 font-bold">{{ form.department.label }}</label>
+   {{ form.department }}
+    {% if form.department.errors %}
+        <p class="text-red-500 text-sm mt-1">
+            {{ form.department.errors }}
+        </p>
+    {% endif %}
 
-    <!-- Department -->
-    <div>
-        <label class="block text-gray-700 font-medium mb-2">
-            Department
-        </label>
+   <label class="pl-7 font-bold">{{ form.salary.label }}</label>
+   {{ form.salary }}
+   <p class="text-sm text-gray-500 mt-1 ml-5">
+        {{ form.salary.help_text }}
+    </p>
 
-        <input type="text" name="department" placeholder="Enter department"
-            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
-    </div>
-
-    <!-- Salary -->
-    <div>
-        <label class="block text-gray-700 font-medium mb-2">
-            Salary
-        </label>
-
-        <input type="number" name="salary" placeholder="Enter salary"
-            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
-    </div>
-
-    <!-- Status -->
-    <div class="flex items-center gap-3">
-        <input type="checkbox" name="status" id="status" checked
-            class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
-
-        <label for="status" class="text-gray-700 font-medium">
-            Active Employee
-        </label>
-    </div>
+   
+   
 
     <!-- Buttons -->
     <div class="flex justify-end gap-4 pt-4">

@@ -63,67 +63,34 @@ Contact Us
 
         <!-- Right Side -->
         <div class="bg-white shadow-xl rounded-2xl p-8 ">
-
             <form method="POST">
-
                 {% csrf_token %}
 
                 <div class="mb-5">
-                    <label class="block font-semibold mb-2">
-                        Full Name
-                    </label>
-
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Enter your name"
-                        class="w-full mt-3 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 ">
+                    <label class="block font-semibold mb-2">Name</label>
+                    {{ form.name }}
                 </div>
 
                 <div class="mb-5">
-                    <label class="block font-semibold mb-2">
-                        Email Address
-                    </label>
-
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        class="w-full mt-3 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <label class="block font-semibold mb-2">Email</label>
+                    {{ form.email }}
                 </div>
 
                 <div class="mb-5">
-                    <label class="block font-semibold mb-2">
-                        Subject
-                    </label>
-
-                    <input
-                        type="text"
-                        name="subject"
-                        placeholder="Enter subject"
-                        class="w-full mt-3 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <label class="block font-semibold mb-2">Subject</label>
+                    {{ form.subject }}
                 </div>
 
                 <div class="mb-5">
-                    <label class="block font-semibold mb-2">
-                        Message
-                    </label>
-
-                    <textarea
-                        name="message"
-                        rows="5"
-                        placeholder="Write your message..."
-                        class="w-full mt-3 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                    <label class="block font-semibold mb-2">Message</label>
+                    {{ form.message }}
                 </div>
 
-                <button
-                    type="submit"
+                <button type="submit"
                     class="w-full bg-blue-900 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
                     Send Message
                 </button>
-
             </form>
-
         </div>
 
     </div>
@@ -139,10 +106,7 @@ Contact Us
 
     <div class="rounded-2xl overflow-hidden shadow-lg">
 
-        <img
-            src="https://www.synergyce.com/images/banner-home2.jpg"
-            class="w-full h-87.5 object-cover"
-            alt="Location">
+        <img src="https://www.synergyce.com/images/banner-home2.jpg" class="w-full h-87.5 object-cover" alt="Location">
 
     </div>
 
