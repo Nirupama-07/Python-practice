@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'website',
     'blog',
     'employee',
+    'accounts',
     'tailwind',
     'theme',
 ]

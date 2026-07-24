@@ -27,6 +27,7 @@ Employee
    <label class="pl-7 font-bold">{{ form.salary.label }}</label>
    {{ form.salary }}
    <p class="text-sm text-gray-500 mt-1 ml-5">
+        {{ form.salary.errors }}
         {{ form.salary.help_text }}
     </p>
 

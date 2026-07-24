@@ -1,4 +1,5 @@
 from django import forms
+from django.core.exceptions import ValidationError
 from .models import Employee
 
 class EmployeeForm(forms.ModelForm):
@@ -45,4 +46,15 @@ class EmployeeForm(forms.ModelForm):
                 "class": "w-5 h-5 ml-7 mr-3 text-blue-600 rounded focus:ring-blue-500"
             })
         }
+
+    def clean(self):
+        cleaned_data=super().clean()
+
+        department=cleaned_data.get("department")
+        salary=cleaned_data.get("salary")
+
+        if department and salary:
+            if department!="IT" and salary>=30000:
+                raise ValidationError("Departments other than IT can get above 30000")
+            return cleaned_data
 
